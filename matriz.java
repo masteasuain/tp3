@@ -50,51 +50,5 @@ public class matriz {
         return (igual);
     }
 
-    public static int posminimo(double []A) {
-        int i, pos=0, size;
-        double valminimo;
-
-        valminimo= A[0];
-        size= A.length;
-        for (i=1;i<size;i++)
-            if (valminimo > A[i]) {
-                valminimo=A[i];
-                pos=i;
-            }
-        return (pos);
-    }
-
-    public static void R_Gauss(double [][]M,int f,int c,int x, int y) {
-
-        int i,j,m;
-        double k;
-        double []B= new double [f];
-
-        for (i=0;i<f;i++)
-            if (i==x) 
-                continue;
-            else {
-                for (m=0;m<f;m++)
-                    B[m]= M[m][y];
-                k= - M[i][y];
-
-                for (j=0;j<c;j++)
-                    M[i][j] += -M[x][j] * B[i];
-            } 
-    }
-
-    public static void Gauss(double [][]M,int f,int c) {
-
-        int i,j,k;
-        double []B= new double [c];
-
-        for (i=0;i<(f-1);i++)
-            for (k=i+1;k<f;k++){
-                for (j=0;j<c;j++)
-                    B[j]= -M[k][i]* M[i][j] + M[i][i]*M[k][j];
-                for (j=0;j<c;j++)
-                    M[k][j] = B[j];
-            }
-    }
-
+    
 } 
